@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "x to fixupx",
+  "version": "1.0",
+  "description": "Converts x.com URLs to fixupx URLs when copying them.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/i/tweetdeck"
+      ],
+      "js": [
+        "appTweetDeck.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.twitter.com/*",
+        "*://*.x.com/*"
+      ],
+      "js": [
+        "appTwitter.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@x-to-fixupx.matkijahenkilo"
+    }
+  }
+}
